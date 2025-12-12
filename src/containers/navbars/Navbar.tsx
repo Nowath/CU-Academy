@@ -80,7 +80,7 @@ const Navbar = () => {
                     ) }
                 </div>
             </motion.div>
-            <div className={` ${openHam ? 'translate-y-0':'-translate-y-200'} origin-top absolute transition-all z-20 overflow-hidden duration-1000 w-full bg-pink-100 top-16 h-[calc(100dvh-4rem)]`}>
+            <div className={` ${openHam ? 'translate-y-0':'-translate-y-260'} origin-top absolute transition-all z-26 overflow-hidden duration-1000 w-full bg-pink-100 top-16 h-[calc(100dvh-4rem)]`}>
                 <div className={`${openHam ? 'opacity-100':'opacity-0'} transition-all delay-800 w-full px-10 py-10 flex flex-col gap-6 *:text-2xl`}>
                     {Navlinks.map((item,index) => (
                         item.dropdown.length > 0 ? (
@@ -111,8 +111,8 @@ const Navbar = () => {
                     ))}
                 </div>
             </div>
-            <div className={` ${openHam ? 'translate-y-0':'-translate-y-200'} origin-top absolute transition-all z-14 duration-800 overflow-hidden w-full bg-[var(--pink1)] top-16 h-[calc(100dvh-4rem)]`}></div>
-            <div className={` ${openHam ? 'translate-y-0':'-translate-y-200'} origin-top absolute transition-all z-10 duration-300 overflow-hidden w-full bg-[var(--pink2)] top-16 h-[calc(100dvh-4rem)]`}></div>
+            <div className={` ${openHam ? 'translate-y-0':'-translate-y-260'} origin-top absolute transition-all z-24 duration-800 overflow-hidden w-full bg-[var(--pink1)] top-16 h-[calc(100dvh-4rem)]`}></div>
+            <div className={` ${openHam ? 'translate-y-0':'-translate-y-260'} origin-top absolute transition-all z-20 duration-300 overflow-hidden w-full bg-[var(--pink2)] top-16 h-[calc(100dvh-4rem)]`}></div>
         </div>
     )
 }

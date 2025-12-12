@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroui/react": "^2.8.5",
+    "dayjs": "^1.11.19",
     "framer-motion": "^12.23.26",
     "hamburger-react": "^2.5.2",
     "motion": "^12.23.26",

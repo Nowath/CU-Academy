@@ -41,6 +41,11 @@ export const Sidelinks: SideLinkitem[] = [
         title: 'ประวัติการทำธุรกรรม',
         icon: 'fa-clock',
         link:'/history'
+    },
+    {
+        title: 'โปรไฟล์',
+        icon: 'fa-user',
+        link:'/profile'
     }
 ]
 
@@ -74,5 +79,10 @@ export const Navlinks: NavLinkitem[] = [
                 link:'/history'
             }
         ]
+    },
+    {
+        title: 'โปรไฟล์',
+        link:'/profile',
+        dropdown:[]
     }
 ]
