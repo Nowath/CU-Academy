@@ -11,7 +11,7 @@ interface Dropdown{
 
 interface NavLinkitem{
     title:string;
-    icon:string;
+    icon?:string;
     link:string;
     dropdown:Dropdown[]
 }

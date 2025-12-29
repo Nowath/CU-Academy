@@ -12,7 +12,7 @@ import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem} from "@heroui/rea
 
 const Navbar = () => {
     const [login, setLogin] = useState(true)
-    const [openDropdown, setOpenDropdown] = useState(null)
+    const [openDropdown, setOpenDropdown] = useState<number | null>(null)
     const [openHam, setOpenHam] = useState(false)
     const router = useRouter()
 
@@ -28,7 +28,7 @@ const Navbar = () => {
                     <Image onClick={() => router.push('/home')} src={`/logo/logo2.png`} alt={`logo`} width={`256`} height={'128'} className={`object-contain cursor-pointer`} />
                 </div>
                 <div className={` md:flex hidden md:gap-8 lg:gap-16 text-sm`}>
-                    {Navlinks.map((item,index) => (
+                    {Navlinks.filter((items, index) => index < 4).map((item,index) => (
                         item.dropdown.length > 0 ? (
                             <div key={index}>
                                 <Dropdown offset={15} onOpenChange={(isOpen) => setOpenDropdown(isOpen ? index : null)}>
@@ -58,7 +58,7 @@ const Navbar = () => {
                 <div className={`flex md:gap-4 items-center`}>
                     { login ? (
                         <>
-                            <Button size="sm" radius="sm" className={`border-2 border-[var(--pink2)] bg-[var(--pink1)] text-gray-600 flex items-center gap-1`}>
+                            <Button size="sm" radius="sm" className={`border-2 border-(--pink2) bg-(--pink1) text-gray-600 flex items-center gap-1`}>
                                 <i className="fa-duotone fa-solid fa-credit-card"></i> 200
                             </Button>
                             <Avatar src="" alt={`avatar`} isBordered size="sm" onClick={() => console.log("Nano")}
@@ -67,7 +67,7 @@ const Navbar = () => {
                                     icon: "text-black/80",
                                 }}
                                 icon={<AvatarIcon />}
-                                className={` ring-[var(--pink2)] cursor-pointer hidden md:flex`}
+                                className={` ring-(--pink2) cursor-pointer hidden md:flex`}
                             />
                             <div className={`flex md:hidden`}>
                                 <Hamburger size={24} rounded toggled={openHam} toggle={setOpenHam} />
@@ -75,7 +75,7 @@ const Navbar = () => {
                         </>
                     ):(
                         <>
-                            <Button size="md" radius="sm" className={`border-2 border-[var(--pink2)] bg-[var(--pink1)]`}>เข้าสู่ระบบ</Button>
+                            <Button size="md" radius="sm" className={`border-2 border-(--pink2) bg-(--pink1)`}>เข้าสู่ระบบ</Button>
                         </>
                     ) }
                 </div>
@@ -111,8 +111,8 @@ const Navbar = () => {
                     ))}
                 </div>
             </div>
-            <div className={` ${openHam ? 'translate-y-0':'-translate-y-260'} origin-top absolute transition-all z-24 duration-800 overflow-hidden w-full bg-[var(--pink1)] top-16 h-[calc(100dvh-4rem)]`}></div>
-            <div className={` ${openHam ? 'translate-y-0':'-translate-y-260'} origin-top absolute transition-all z-20 duration-300 overflow-hidden w-full bg-[var(--pink2)] top-16 h-[calc(100dvh-4rem)]`}></div>
+            <div className={` ${openHam ? 'translate-y-0':'-translate-y-260'} origin-top absolute transition-all z-24 duration-800 overflow-hidden w-full bg-(--pink1) top-16 h-[calc(100dvh-4rem)]`}></div>
+            <div className={` ${openHam ? 'translate-y-0':'-translate-y-260'} origin-top absolute transition-all z-20 duration-300 overflow-hidden w-full bg-(--pink2) top-16 h-[calc(100dvh-4rem)]`}></div>
         </div>
     )
 }

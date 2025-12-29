@@ -43,7 +43,7 @@ const Sidebar = () => {
                         </div>
                     ))}
                     <div
-                        className={` absolute top-0 w-[calc(100%-2rem)] duration-600 h-12 bg-[var(--pink1)] rounded-md transition-all`}
+                        className={` absolute top-0 w-[calc(100%-2rem)] duration-600 h-12 bg-(--pink1) rounded-md transition-all`}
                         style={{
                             transform: `translateY(${activeIndex * (48 + 8)}px)`
                         }}
