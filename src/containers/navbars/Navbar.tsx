@@ -28,7 +28,7 @@ const Navbar = () => {
                     <Image onClick={() => router.push('/home')} src={`/logo/logo2.png`} alt={`logo`} width={`256`} height={'128'} className={`object-contain cursor-pointer`} />
                 </div>
                 <div className={` md:flex hidden md:gap-8 lg:gap-16 text-sm`}>
-                    {Navlinks.filter((items, index) => index < 4).map((item,index) => (
+                    {Navlinks.filter((item, index) => index < 4).map((item,index) => (
                         item.dropdown.length > 0 ? (
                             <div key={index}>
                                 <Dropdown offset={15} onOpenChange={(isOpen) => setOpenDropdown(isOpen ? index : null)}>
@@ -82,7 +82,7 @@ const Navbar = () => {
             </motion.div>
             <div className={` ${openHam ? 'translate-y-0':'-translate-y-260'} origin-top absolute transition-all z-26 overflow-hidden duration-1000 w-full bg-pink-100 top-16 h-[calc(100dvh-4rem)]`}>
                 <div className={`${openHam ? 'opacity-100':'opacity-0'} transition-all delay-800 w-full px-10 py-10 flex flex-col gap-6 *:text-2xl`}>
-                    {Navlinks.map((item,index) => (
+                    {Navlinks.filter(item => item.disable === false).map((item,index) => (
                         item.dropdown.length > 0 ? (
                             <div key={index}>
                                 <p onClick={() => setOpenDropdown(openDropdown === index ? null : index)} className="cursor-pointer text-gray-600 hover:text-black transition-all select-none">
