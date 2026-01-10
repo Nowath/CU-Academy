@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Kanit } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "@/providers/AuthProvider";
 
 const kanit = Kanit({
   variable: "--font-kanit",
@@ -29,7 +30,9 @@ export default function RootLayout({
       <body
         className={`${kanit.variable} antialiased`}
       >
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
